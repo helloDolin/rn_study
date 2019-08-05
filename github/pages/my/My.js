@@ -13,10 +13,24 @@ import {
     DeviceEventEmitter
 } from 'react-native';
 import {PropTypes} from 'prop-types';
-import {ThemeColors} from '../../theme/Theme'
-import ThemeService from '../../theme/ThemeService'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const themeService = new ThemeService();
+class MyCell extends PureComponent {
+    constructor(props){
+        super(props);
+    }
+
+    onClick = (pageName) => {
+        console.log(pageName)
+    }
+
+    render(){
+        return <View style={{height:44,flex:1, flexDirection:'row'}} onPress={this.onclick}>
+            <Text style={{paddingLeft:10}}>Theme</Text>
+            <Icon name='right' style={{paddingRight:10}}/>
+        </View>
+    }
+}
 
 export default class My extends Component {
     // 属性类型
@@ -34,41 +48,12 @@ export default class My extends Component {
 
     }
 
-    itemClick(key){
-        const callback = () => {
-            DeviceEventEmitter.emit('THEME_CHANGE');
-        }
-        themeService.saveTheme(key,callback);
-    }
-
-    getThemeItem(themeKey) {
-        return <TouchableHighlight style={{flex:1}} underlayColor='white' onPress={()=>{this.itemClick(themeKey)}}>
-            <View style={[{backgroundColor:ThemeColors[themeKey]},styles.themeItem]}>
-                <Text style={{color:'white'}}>{themeKey}</Text>
-            </View>
-        </TouchableHighlight>
-    }
-
-    renderThemeItems(){
-        var views = [];
-        for (let i = 0,keys = Object.keys(ThemeColors),l = keys.length;i < l;i+=3) {
-            var key1 = keys[i];
-            var key2 = keys[i + 1];
-            var key3 = keys[i + 2];
-            views.push(<View key={i} style={{flexDirection:'row'}}>
-                {this.getThemeItem(key1)}
-                {this.getThemeItem(key2)}
-                {this.getThemeItem(key3)}
-            </View>)
-        }
-        return views;
-    }
-
     render() {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    {this.renderThemeItems()}
+                    <MyCell/>
+                    <MyCell/>
                 </ScrollView>
             </View>
         );
