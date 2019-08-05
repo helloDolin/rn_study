@@ -62,11 +62,23 @@ Promise（处理异步）
 # 一些命令
 查询当前RN版本：react-native -version
 
+查看8081端口使用情况：sudo lsof -i :8081
+
+sudo kill -9 47276 （PID）
+
+react-native info
+
+react-native link
+
+rm -rf node_modules && npm install
+
 # 打包、上线
 TODO
 
 # 升级、适配
 扫描、分享等Native组件供JS调用
+
+升级参考：https://react-native-community.github.io/upgrade-helper/
 
 # 打bundle包
 react-native bundle --entry-file index.js --bundle-output ./ios/bundle/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false
