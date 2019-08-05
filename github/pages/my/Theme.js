@@ -8,7 +8,8 @@ import {
     View,
     Text,
     StyleSheet,
-    ScrollView
+    ScrollView,
+    TouchableHighlight
 } from 'react-native';
 import {PropTypes} from 'prop-types';
 import {ThemeColors} from '../../theme/Theme'
@@ -77,4 +78,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    themeItem:{
+        flex:1,
+        height:120,
+        justifyContent:'center',
+        alignItems:'center',
+        margin:3
+    }
 });

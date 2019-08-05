@@ -12,6 +12,7 @@ import Popular from '../pages/popular/Popular';
 import My from '../pages/my/My'
 import Trending from '../pages/trending/Trending'
 import Web from '../pages/webview/DetailPage'
+import Theme from '../pages/my/Theme'
 
 const PopularNav = createStackNavigator({
     Popular:{
@@ -74,7 +75,26 @@ const MyNav = createStackNavigator({
             headerTitle:'My'
         }
     },
+    Theme:{
+        screen:Theme,
+        navigationOptions:{
+            headerTitle:'Theme'
+        }
+    },
+    Web:{
+        screen:Web,
+    }
 });
+
+MyNav.navigationOptions = ({navigation}) => {
+    let tabBarVisible = true;
+    if (navigation.state.index > 0) {
+        tabBarVisible = false;
+    }
+    return {
+        tabBarVisible
+    };
+}
 
 const tabbar = createBottomTabNavigator(
     {

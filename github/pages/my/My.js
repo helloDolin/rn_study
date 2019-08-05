@@ -3,36 +3,59 @@
  * Description：
  */
 
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {
     View,
     Text,
     StyleSheet,
     ScrollView,
     TouchableHighlight,
-    DeviceEventEmitter
+    DeviceEventEmitter,
+    Image
 } from 'react-native';
 import {PropTypes} from 'prop-types';
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/FontAwesome5'
+import NavigationService from '../../tabbar/NavigationService'
 
 class MyCell extends PureComponent {
+    static defaultProps = {
+        // pageName:PropTypes.string,
+    };
+
     constructor(props){
         super(props);
     }
 
-    onClick = (pageName) => {
-        console.log(pageName)
+    onClick = () => {
+        const pageName = this.props.pageName;
+        if (pageName === 'Theme') {
+            NavigationService.navigate('Theme',{
+                title:{pageName}
+            });
+        }
+        if (pageName === '我的GitHub') {
+            NavigationService.navigate('Web',{
+                url:'https://github.com/liaoshaolim/rn_study',
+                title:pageName
+            });
+        }
     }
 
     render(){
-        return <View style={{height:44,flex:1, flexDirection:'row'}} onPress={this.onclick}>
-            <Text style={{paddingLeft:10}}>Theme</Text>
-            <Icon name='right' style={{paddingRight:10}}/>
-        </View>
+        let cellStyle = {height:66,flex:1, flexDirection:'row',alignItems:'center',borderBottomWidth:0.5,borderColor:'#e8e8e8',justifyContent:'space-between'}
+        return <TouchableHighlight underlayColor='red' onPress={this.onClick}>
+            <View style={cellStyle} onPress={this.onclick}>
+                <View style={{flexDirection:'row',alignItems:'center'}}>
+                    <Icon name= {this.props.iconName} style={{marginLeft:20,color:'red'}} size={18}/>
+                    <Text style={{marginLeft:8}}>{this.props.pageName}</Text>
+                </View>
+                <Icon name='angle-right' style={{marginRight:20}}/>
+            </View>
+        </TouchableHighlight>
     }
 }
 
-export default class My extends Component {
+export default class My extends PureComponent {
     // 属性类型
     static propTypes = {
         // data:PropTypes.object.isRequired,
@@ -49,11 +72,28 @@ export default class My extends Component {
     }
 
     render() {
+        let headerView = <View style={{flex:1,flexDirection:'row'}}>
+            <Image style={{width:80,height:80,borderRadius:10,marginLeft:10,marginTop:10,marginBottom:10}} source={require('../../res/img/zhizunbao.jpeg')}></Image>
+            <View style={{margin:10,justifyContent:'space-between'}}>
+                <Text style={{fontWeight:'bold',fontSize:24}}>Dolin</Text>
+                <Text>hahaha...</Text>
+            </View>
+
+        </View>
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    <MyCell/>
-                    <MyCell/>
+                    {headerView}
+
+                    <MyCell pageName='我的GitHub' iconName='github'/>
+                    <MyCell pageName='QQ' iconName='qq'/>
+                    <MyCell pageName='支付宝' iconName='alipay'/>
+                    <MyCell pageName='微信' iconName='weixin'/>
+                    <MyCell pageName='twitter' iconName='twitter'/>
+                    <MyCell pageName='BTC' iconName='btc'/>
+                    <MyCell pageName='ETH' iconName='ethereum'/>
+                    <MyCell pageName='Theme' iconName='meh'/>
+
                 </ScrollView>
             </View>
         );
@@ -64,11 +104,4 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    themeItem:{
-        flex:1,
-        height:120,
-        justifyContent:'center',
-        alignItems:'center',
-        margin:3
-    }
 });
