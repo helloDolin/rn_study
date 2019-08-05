@@ -35,8 +35,8 @@ flexWrap
 justifyContent（主轴）
 > enum(‘flex-start’, ‘flex-end’, ‘center’, ‘space-between’, ‘space-around’)
 
-* space-between:类似TabBar的布局
-* space-around：左右两边的padding同元素之间的padding
+* space-between：第一个子组件位于父容器左端，最后一个子组件位于父容器最右端。然后平均分配在父容器水平方向上
+* space-around：所有子组件平均分配在父容器的水平方向上，左右都有留空隙
 
 alignItems（侧轴、交叉轴）
 > enum(‘flex-start’, ‘flex-end’, ‘center’, ‘stretch’)
