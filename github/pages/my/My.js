@@ -17,6 +17,8 @@ import {PropTypes} from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import NavigationService from '../../tabbar/NavigationService'
 
+const margin_left_right_num = 15;
+
 class MyCell extends PureComponent {
     static defaultProps = {
         // pageName:PropTypes.string,
@@ -46,10 +48,10 @@ class MyCell extends PureComponent {
         return <TouchableHighlight underlayColor='red' onPress={this.onClick}>
             <View style={cellStyle} onPress={this.onclick}>
                 <View style={{flexDirection:'row',alignItems:'center'}}>
-                    <Icon name= {this.props.iconName} style={{marginLeft:20,color:'red'}} size={18}/>
+                    <Icon name= {this.props.iconName} style={{marginLeft:margin_left_right_num,color:'red'}} size={18}/>
                     <Text style={{marginLeft:8}}>{this.props.pageName}</Text>
                 </View>
-                <Icon name='angle-right' style={{marginRight:20}}/>
+                <Icon name='angle-right' style={{marginRight:margin_left_right_num}}/>
             </View>
         </TouchableHighlight>
     }
@@ -73,7 +75,7 @@ export default class My extends PureComponent {
 
     render() {
         let headerView = <View style={{flex:1,flexDirection:'row'}}>
-            <Image style={{width:80,height:80,borderRadius:10,marginLeft:10,marginTop:10,marginBottom:10}} source={require('../../res/img/zhizunbao.jpeg')}></Image>
+            <Image style={{width:80,height:80,borderRadius:10,marginLeft:margin_left_right_num,marginTop:10,marginBottom:10}} source={require('../../res/img/zhizunbao.jpeg')}></Image>
             <View style={{margin:10,justifyContent:'space-between'}}>
                 <Text style={{fontWeight:'bold',fontSize:24}}>Dolin</Text>
                 <Text>hahaha...</Text>
