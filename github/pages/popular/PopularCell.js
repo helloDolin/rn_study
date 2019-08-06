@@ -37,7 +37,7 @@ export default class PopularCell extends PureComponent {
         const {data} = this.props;
         const {theme} = this.context;
         return (
-            <View style={styles.container}>
+            <View style={[styles.container,{borderColor:theme}]}>
                 <Text style={styles.title}>{data.full_name}</Text>
                 <TouchableOpacity onPress={this.goDetail}>
                     <Text style={styles.description}>{data.description}</Text>
@@ -68,8 +68,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor:'#fff',
         padding:10,
-        marginLeft:5,
-        marginRight:5,
+        marginHorizontal:5,
         marginVertical:3,
         borderColor:'#ddd',
         borderWidth:0.5,
@@ -84,7 +83,6 @@ const styles = StyleSheet.create({
         fontSize:16,
         marginBottom:2,
         color:'#212121',
-        flex:1
     },
     row:{
         flexDirection:'row',
