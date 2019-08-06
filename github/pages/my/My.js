@@ -47,12 +47,12 @@ class MyCell extends PureComponent {
 
     render(){
         const { theme } = this.context;
-        let iconColor = theme; //Math.random() > 0.5 ? 'red' : 'green';
+        //Math.random() > 0.5 ? 'red' : 'green';
         let cellStyle = {height:66,flex:1, flexDirection:'row',alignItems:'center',borderBottomWidth:0.5,borderColor:'#e8e8e8',justifyContent:'space-between'}
-        return <TouchableHighlight underlayColor='red' onPress={this.onClick}>
+        return <TouchableHighlight underlayColor={theme} onPress={this.onClick}>
             <View style={cellStyle} onPress={this.onclick}>
                 <View style={{flexDirection:'row',alignItems:'center'}}>
-                    <Icon name= {this.props.iconName} style={{marginLeft:margin_left_right_num,color:iconColor}} size={18}/>
+                    <Icon name= {this.props.iconName} style={{marginLeft:margin_left_right_num,color:theme}} size={18}/>
                     <Text style={{marginLeft:8}}>{this.props.pageName}</Text>
                 </View>
                 <Icon name='angle-right' style={{marginRight:margin_left_right_num}}/>

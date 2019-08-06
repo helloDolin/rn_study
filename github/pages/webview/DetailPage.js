@@ -31,12 +31,6 @@ export default class DetailPage extends PureComponent {
 
     }
 
-    static navigationOptions = ({ navigation, screenProps}) => {
-        return {
-            title: navigation.getParam('title'),
-        };
-    };
-
     render() {
         const {navigation} = this.props;
         const url = navigation.getParam('url');

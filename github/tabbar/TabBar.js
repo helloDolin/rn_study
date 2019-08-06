@@ -14,24 +14,32 @@ import Trending from '../pages/trending/Trending'
 import Web from '../pages/webview/DetailPage'
 import Theme from '../pages/my/Theme'
 
+/*页面设置*/
+const pageConfig = (pageName,theme) => {
+    return {
+        title: pageName,
+        headerStyle: {
+            backgroundColor: theme,
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        },
+    };
+}
+
 const PopularNav = createStackNavigator({
     Popular:{
         screen:Popular,
         navigationOptions:({ navigation, screenProps}) => {
-            return {
-                title: 'Popular',
-                headerStyle: {
-                    backgroundColor: screenProps.theme,
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            };
+           return pageConfig('Popular',screenProps.theme);
         }
     },
     Web:{
         screen:Web,
+        navigationOptions:({ navigation, screenProps}) => {
+            return pageConfig(navigation.getParam('title'),screenProps.theme);
+        }
     }
 });
 
@@ -49,16 +57,7 @@ const TrendingNav = createStackNavigator({
     Trending:{
         screen:Trending,
         navigationOptions:({ navigation, screenProps}) => {
-            return {
-                title: 'Trending',
-                headerStyle: {
-                    backgroundColor: screenProps.theme,
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            };
+            return pageConfig('Trending',screenProps.theme);
         }
     },
 });
@@ -67,16 +66,7 @@ const FavoriteNav = createStackNavigator({
     Favorite:{
         screen:Favorite,
         navigationOptions:({ navigation, screenProps}) => {
-            return {
-                title: 'Favorite',
-                headerStyle: {
-                    backgroundColor: screenProps.theme,
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            };
+            return pageConfig('Favorite',screenProps.theme);
         }
     },
 });
@@ -85,26 +75,20 @@ const MyNav = createStackNavigator({
     My:{
         screen:My,
         navigationOptions:({ navigation, screenProps}) => {
-            return {
-                title: 'My',
-                headerStyle: {
-                    backgroundColor: screenProps.theme,
-                },
-                headerTintColor: '#fff',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            };
+            return pageConfig('My',screenProps.theme);
         }
     },
     Theme:{
         screen:Theme,
-        navigationOptions:{
-            headerTitle:'Theme'
+        navigationOptions:({ navigation, screenProps}) => {
+            return pageConfig('Theme',screenProps.theme);
         }
     },
     Web:{
         screen:Web,
+        navigationOptions:({ navigation, screenProps}) => {
+            return pageConfig(navigation.getParam('title'),screenProps.theme);
+        }
     }
 });
 

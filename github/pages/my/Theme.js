@@ -15,6 +15,7 @@ import {
 import {PropTypes} from 'prop-types';
 import {ThemeColors} from '../../theme/Theme'
 import ThemeService from '../../theme/ThemeService'
+import NavigationService from '../../tabbar/NavigationService'
 
 const themeService = new ThemeService();
 
@@ -40,6 +41,8 @@ export default class Theme extends PureComponent {
         }
         let color = ThemeColors[key];
         themeService.saveTheme(color,callback);
+        const {navigation} = this.props;
+        navigation.goBack();
     }
 
     getThemeItem(themeKey) {
