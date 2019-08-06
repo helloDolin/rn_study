@@ -15,8 +15,11 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import NavigationService from '../../tabbar/NavigationService'
+import {ThemeContext} from '../../theme/ThemeContext'
 
 export default class PopularCell extends PureComponent {
+    static contextType = ThemeContext;
+
     goDetail = () => {
         const {data} = this.props;
         NavigationService.navigate('Web',{
@@ -32,6 +35,7 @@ export default class PopularCell extends PureComponent {
 
     render(){
         const {data} = this.props;
+        const {theme} = this.context;
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>{data.full_name}</Text>
@@ -51,7 +55,7 @@ export default class PopularCell extends PureComponent {
                         <Text>{data.stargazers_count}</Text>
                     </View>
                     <TouchableOpacity onPress={this.handleFavorite}>
-                        <Icon name='grade' size={25} color={data.isFavorite ? 'red' : '#E5E5E5'}/>
+                        <Icon name='grade' size={25} color={data.isFavorite ? theme : '#E5E5E5'}/>
                     </TouchableOpacity>
                 </View>
             </View>

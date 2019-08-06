@@ -34,9 +34,10 @@ export default class ThemeService extends Component {
     saveTheme = (theme, callback) => {
         AsyncStorage.setItem(THEME_TAG, theme, (err) => {
             console.log(THEME_TAG,theme);
-            console.log(err);
             if (!err) {
                 callback && callback();
+            }else {
+                console.log(err);
             }
         })
     }

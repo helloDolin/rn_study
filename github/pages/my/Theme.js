@@ -9,7 +9,8 @@ import {
     Text,
     StyleSheet,
     ScrollView,
-    TouchableHighlight
+    TouchableHighlight,
+    DeviceEventEmitter
 } from 'react-native';
 import {PropTypes} from 'prop-types';
 import {ThemeColors} from '../../theme/Theme'
@@ -35,9 +36,10 @@ export default class Theme extends PureComponent {
 
     itemClick(key){
         const callback = () => {
-            DeviceEventEmitter.emit('THEME_CHANGE');
+            DeviceEventEmitter.emit('THEME_CHANGED');
         }
-        themeService.saveTheme(key,callback);
+        let color = ThemeColors[key];
+        themeService.saveTheme(color,callback);
     }
 
     getThemeItem(themeKey) {

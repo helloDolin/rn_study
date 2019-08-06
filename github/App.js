@@ -54,11 +54,9 @@ class App extends PureComponent {
         const {theme} = this.state;
         console.log(theme);
         return (
-            <View style={styles.container}>
-                <ThemeContext.Provider value={{theme}}>
-                    <TabBar screenProps = {{theme}} ref = {navigtionRef => NavigationService.setTopLevelNavigator(navigtionRef)}/>
-                </ThemeContext.Provider>
-            </View>
+            <ThemeContext.Provider value={{theme}}>
+                <TabBar screenProps = {{theme}} ref = {navigtionRef => NavigationService.setTopLevelNavigator(navigtionRef)}/>
+            </ThemeContext.Provider>
         );
     }
 };

@@ -16,10 +16,12 @@ import {
 import {PropTypes} from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import NavigationService from '../../tabbar/NavigationService'
+import {ThemeContext} from '../../theme/ThemeContext'
 
 const margin_left_right_num = 15;
 
 class MyCell extends PureComponent {
+    static contextType = ThemeContext;
     static defaultProps = {
         // pageName:PropTypes.string,
     };
@@ -44,7 +46,8 @@ class MyCell extends PureComponent {
     }
 
     render(){
-        let iconColor = Math.random() > 0.5 ? 'red' : 'green';
+        const { theme } = this.context;
+        let iconColor = theme; //Math.random() > 0.5 ? 'red' : 'green';
         let cellStyle = {height:66,flex:1, flexDirection:'row',alignItems:'center',borderBottomWidth:0.5,borderColor:'#e8e8e8',justifyContent:'space-between'}
         return <TouchableHighlight underlayColor='red' onPress={this.onClick}>
             <View style={cellStyle} onPress={this.onclick}>
