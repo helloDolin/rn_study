@@ -137,7 +137,7 @@ const tabbar = createBottomTabNavigator(
                 tabBarLabel: ({ focused, tintColor }) => {
                     return (
                         <Text style={{ color: focused ? screenProps.theme : tintColor, textAlign: 'center' ,fontSize:12 }}>
-                            Popular
+                            Trending
                         </Text>
                     )
                 }
@@ -156,7 +156,7 @@ const tabbar = createBottomTabNavigator(
                 tabBarLabel: ({ focused, tintColor }) => {
                     return (
                         <Text style={{ color: focused ? screenProps.theme : tintColor, textAlign: 'center' ,fontSize:12 }}>
-                            Popular
+                            Favorite
                         </Text>
                     )
                 }
@@ -176,7 +176,7 @@ const tabbar = createBottomTabNavigator(
                 tabBarLabel: ({ focused, tintColor }) => {
                     return (
                         <Text style={{ color: focused ? screenProps.theme : tintColor, textAlign: 'center' ,fontSize:12 }}>
-                            Popular
+                            My
                         </Text>
                     )
                 }
