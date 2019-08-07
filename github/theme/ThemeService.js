@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
-import {Palette} from './Theme'
+import {ThemeColors} from './Theme'
 
 const THEME_TAG = 'theme_key';
 
@@ -23,8 +23,8 @@ export default class ThemeService extends Component {
                     reject(error)
                 }
                 if (!result) {
-                    this.saveTheme(Palette.Blue["400"]);
-                    result = Palette.Blue["400"];
+                    this.saveTheme(ThemeColors.Default);
+                    result = ThemeColors.Default;
                 }
                 resolve(result);
             })

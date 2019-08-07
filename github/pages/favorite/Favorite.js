@@ -64,8 +64,15 @@ export default class Favorite extends Component {
             })
     }
 
+    handleFavorite = (item,isFavorite) => {
+        const callback = () =>  {
+            this.loadData();
+        }
+        favoriteService.removeFavoriteItem(item.id.toString(),callback)
+    }
+
     renderRow = ({item}) => {
-        return <Cell data={item}/>
+        return <Cell data={item} onFavorite={this.handleFavorite}/>
     }
 
     _keyExtractor = (item,index) => item.id + '';
