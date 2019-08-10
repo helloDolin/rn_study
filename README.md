@@ -59,19 +59,6 @@ AsyncStorage
 Fetch
 Promise（处理异步）
 
-# 一些命令
-查询当前RN版本：react-native -version
-
-查看8081端口使用情况：sudo lsof -i :8081
-
-sudo kill -9 47276 （PID）
-
-react-native info
-
-react-native link
-
-rm -rf node_modules && npm install
-
 # 打包、上线
 TODO
 
@@ -114,3 +101,22 @@ Options:
 --reset-cache                移除缓存文件
 
 --config [string]            命令行的配置文件路径
+
+# 一些命令
+查询当前RN版本：react-native -version
+
+查看8081端口使用情况：sudo lsof -i :8081
+
+sudo kill -9 47276 （PID）
+
+react-native link (0.6之后自动link，只需管理pod file)
+
+重新安装node包 rm -rf node_modules && npm install
+
+查看RN信息，包括系统信息、node版本、react版本等 react-native info
+
+查看安装的node版本list nvm ls
+
+安装指定node版本 nvm install 12.4.0
+
+查看当前node版本 nvm current
