@@ -1,5 +1,5 @@
 # 项目学习
-![component life circle](./readme_img/snip.png)
+![project snip](./readme_img/snip.png)
 
 ***
 # 原理
