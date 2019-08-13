@@ -7,7 +7,9 @@ JS → JavaScript Core → Native代码
 
 # 通信
 组件之间的通信：props
+
 跨组件通信：通知
+
 RN与Native通信：参考官方文档
 
 # ES6
@@ -21,11 +23,13 @@ RN与Native通信：参考官方文档
 在js中嵌入xml
 
 # 样式
-* StyleSheet.create
+* StyleSheet.create({});
 * 多样式可传入数组，后面会覆盖前面的
 * 可加入条件是否添加此样式
 
 # 布局（flexbox）
+官推：https://www.weibo.com/1712131295/CoRnElNkZ?ref=collection&type=comment#_rnd1565700689295
+
 flexDirection 主轴方向
 > enum(‘row’, ‘column’,’row-reverse’,’column-reverse’)
 

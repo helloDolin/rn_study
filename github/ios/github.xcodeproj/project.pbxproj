@@ -15,7 +15,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1559A80E26EFA246F2C9BF9D /* libPods-github-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE9822CDF10AD1424F0B6A4 /* libPods-github-tvOS.a */; };
 		16719B9722F8464700449733 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 16719B9622F8464700449733 /* assets */; };
-		16719B9922F8467F00449733 /* index.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 16719B9822F8467F00449733 /* index.ios.jsbundle */; };
+		1680E4A32302FFD10063D882 /* index.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 1680E4A22302FFD10063D882 /* index.ios.jsbundle */; };
 		16A65D7C844B4E9D8B951E0F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1FADC7A59C348F5A2DD1F93 /* Octicons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -58,7 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* githubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = githubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* githubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = githubTests.m; sourceTree = "<group>"; };
@@ -74,7 +73,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = github/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = github/main.m; sourceTree = "<group>"; };
 		16719B9622F8464700449733 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = bundle/assets; sourceTree = "<group>"; };
-		16719B9822F8467F00449733 /* index.ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.ios.jsbundle; sourceTree = "<group>"; };
+		1680E4A22302FFD10063D882 /* index.ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.ios.jsbundle; sourceTree = "<group>"; };
 		1B33E59F5D614B9B8918DCB8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		1DA082A620A9A171468935D2 /* Pods-github.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github.debug.xcconfig"; path = "Target Support Files/Pods-github/Pods-github.debug.xcconfig"; sourceTree = "<group>"; };
 		24A7452C05E44E4A83752EC1 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
@@ -161,9 +160,8 @@
 		13B07FAE1A68108700A75B9A /* github */ = {
 			isa = PBXGroup;
 			children = (
-				16719B9822F8467F00449733 /* index.ios.jsbundle */,
+				1680E4A22302FFD10063D882 /* index.ios.jsbundle */,
 				16719B9622F8464700449733 /* assets */,
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -411,7 +409,7 @@
 				5B814552EFC3460FB5284BA7 /* EvilIcons.ttf in Resources */,
 				EDD4CABD38194B248EA3FCE6 /* Feather.ttf in Resources */,
 				C82F5EF5D6D4433E961272D2 /* FontAwesome.ttf in Resources */,
-				16719B9922F8467F00449733 /* index.ios.jsbundle in Resources */,
+				1680E4A32302FFD10063D882 /* index.ios.jsbundle in Resources */,
 				C7432923C82D4D1396DFB680 /* FontAwesome5_Brands.ttf in Resources */,
 				F4E1D69B483C4D38AEBFEFFD /* FontAwesome5_Regular.ttf in Resources */,
 				4EFCC3A445BC4D5F946533E6 /* FontAwesome5_Solid.ttf in Resources */,

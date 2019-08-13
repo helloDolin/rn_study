@@ -33,11 +33,11 @@
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
 #if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+//  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
   
-//  NSString *path = [[NSBundle mainBundle] pathForResource:@"index.ios" ofType:@"jsbundle"];
-//  NSURL *jsBundleURL = [NSURL URLWithString:path];
-//  return jsBundleURL;
+  NSString *path = [[NSBundle mainBundle] pathForResource:@"index.ios" ofType:@"jsbundle"];
+  NSURL *jsBundleURL = [NSURL URLWithString:path];
+  return jsBundleURL;
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
